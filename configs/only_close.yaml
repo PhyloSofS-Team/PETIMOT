@@ -1,0 +1,4 @@
+data:
+  k_nearest: 15
+  l_random: 0
+  change_connectivity: false

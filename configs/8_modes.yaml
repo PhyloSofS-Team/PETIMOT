@@ -1,0 +1,7 @@
+training:
+  nsse_weight: 1.0
+  rmsip_weight: 0.0
+  ortho_weight: 0.0
+
+model:
+  num_modes_pred: 8

@@ -1,0 +1,4 @@
+training:
+  nsse_weight: 0.0
+  rmsip_weight: 0.0
+  ortho_weight: 1.0

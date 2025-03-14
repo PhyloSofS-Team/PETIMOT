@@ -1,0 +1,6 @@
+training:
+  nsse_weight: 0.5
+  rmsip_weight: 0.5
+  
+model:  
+  num_layers: 5

@@ -1,0 +1,4 @@
+data:
+  rand_emb: true
+model:
+  ablate_structure: true

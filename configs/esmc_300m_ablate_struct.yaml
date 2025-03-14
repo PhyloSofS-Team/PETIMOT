@@ -1,0 +1,5 @@
+data:
+  emb_model: "esmc_300m"
+
+model:
+  ablate_structure: true

@@ -1,0 +1,54 @@
+training:
+  seed: 7
+  nsse_weight: 0.5
+  rmsip_weight: 0.5
+  ortho_weight: 0.0
+  batch_size: 32
+  validation_batch_size: 32  
+  nb_epochs: 500
+  num_workers: 6
+  num_workers_val: 2
+  pin_memory: false
+  optimizer: "adamw"
+  learning_rate: 0.0005  
+  weight_decay: 0.01
+  scheduler_factor: 0.2
+  scheduler_patience: 10
+  loss_threshold: 0.6
+  use_amp: true
+  grad_clip: 10  
+  early_stop_patience: 50
+  weights_dir: "weights"
+  debug: false
+  
+data:
+  training_split_path: "full_train_list.txt"
+  validation_split_path: "val_list.txt"
+  ground_truth_dir: "ground_truth"
+  embedding_dir: "embeddings"
+  emb_model: "ProstT5"
+  noise: 0.0
+  k_nearest: 5
+  l_random: 10
+  num_modes_gt: 4
+  rand_emb: false
+  change_connectivity: true
+
+model:
+  emb_dim: 256
+  edge_dim: 329
+  num_modes_pred: 4
+  num_layers: 15
+  shared_layers: false
+  mlp_num_layers: 1
+  start_with_zero_v: false
+  input_embedding_dropout: 0.8
+  dropout: 0.4
+  normalize_between_layers: false
+  center_between_layers: false
+  orthogonalize_between_layers: false
+  num_basis: 20
+  num_backbone_atoms: 4  
+  max_dist: 20.0
+  sigma: 1.0
+  ablate_structure: false
