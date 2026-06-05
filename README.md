@@ -48,6 +48,7 @@ python -m petimot evaluate \
 ```
 
 Available baseline predictions:
+- BioEmu
 - AlphaFlow (distilled)
 - ESMFlow (distilled)
 - Normal Mode Analysis
