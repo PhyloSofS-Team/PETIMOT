@@ -21,14 +21,14 @@ pip install -r requirements.txt
 ### Reproduce paper results 
 
 1. Download resources from [Figshare](https://figshare.com/s/fe86b5dd8ad0985e2fab):
-- Download `default_2025-02-07_21-54-02_epoch_33.pt` into the `weights/` directory
-- Download and extract `ground_truth.zip` into the `ground_truth/` directory
+- Download `default.pt` into the `model_weights/` directory
+- Download and extract `ground_truth.tgz` into the `ground_truth/` directory
 
 2. Run inference and evaluation:
 ```bash
 python -m petimot infer_and_evaluate \
-    --model-path weights/default_2025-02-07_21-54-02_epoch_33.pt \
-    --list-path eval_list.txt \
+    --model-path model_weights/default.pt \
+    --list-path splits/test824.txt \
     --ground-truth-path ground_truth/ \
     --prediction-path predictions/ \
     --evaluation-path evaluation/
@@ -36,13 +36,13 @@ python -m petimot infer_and_evaluate \
 
 ### Compare with baseline methods
 
-1. Download baseline predictions from [Figshare](https://figshare.com/s/ab400d852b4669a83b64) :
-- Download and extract `baseline_predictions.zip` into the `baselines/` directory
+1. Download baseline predictions from [Figshare](https://figshare.com/s/fe86b5dd8ad0985e2fab) :
+- Download and extract `baseline_predictions.tgz` into the `baseline_predictions/` directory
 
 2. Run evaluation:
 ```bash
 python -m petimot evaluate \
-    --prediction-path baselines/alphaflow_pdb_distilled/ \
+    --prediction-path baseline_predictions/alphaflow_pdb_distilled/ \
     --ground-truth-path ground_truth/ \
     --output-path evaluation/
 ```
@@ -51,22 +51,20 @@ Available baseline predictions:
 - BioEmu
 - AlphaFlow (distilled)
 - ESMFlow (distilled)
-- Normal Mode Analysis
-
-
+- Normal Mode Analysis (various flavours of the Elastic Network Model)
 
 ### Predict motions for your own PDB files
 
 ```bash
 # Single PDB structure
 python -m petimot infer \
-    --model-path weights/default_2025-02-07_21-54-02_epoch_33.pt \
+    --model-path weights/default.pt \
     --list-path protein.pdb \
     --output-path predictions/
 
 # Multiple structures (provide paths in a text file)
 python -m petimot infer \
-    --model-path weights/default_2025-02-07_21-54-02_epoch_33.pt \
+    --model-path weights/default.pt \
     --list-path protein_list.txt \
     --output-path predictions/
 ```
