@@ -20,7 +20,7 @@ pip install -r requirements.txt
 
 ### Reproduce paper results 
 
-1. Download resources from [Figshare](https://figshare.com/s/ab400d852b4669a83b64):
+1. Download resources from [Figshare](https://figshare.com/s/fe86b5dd8ad0985e2fab):
 - Download `default_2025-02-07_21-54-02_epoch_33.pt` into the `weights/` directory
 - Download and extract `ground_truth.zip` into the `ground_truth/` directory
 
