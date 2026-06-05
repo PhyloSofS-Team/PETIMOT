@@ -120,7 +120,7 @@ if __name__ == '__main__':
         print(prot)
         results = load_and_sample(
             pt_path="ground_truth/"+prot+".pt",
-            pred_modes_dir="fold_pred_full/"+prot,
+            pred_modes_dir="predictions/"+prot,
             outPDB="traj_fixed_energy/ensemble_"+prot+".pdb",
             mulFac=1
             )
