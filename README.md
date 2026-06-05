@@ -73,7 +73,7 @@ python -m petimot infer \
 
 1. Download predictions from [Figshare](https://figshare.com/s/fe86b5dd8ad0985e2fab) :
 - Download and extract `predictions.tgz` into the `predictions/` directory
-- CReate `traj_fixed_energy` directory
+- Create `traj_fixed_energy` directory
 
 2. Generate:
 ```bash
