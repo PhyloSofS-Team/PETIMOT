@@ -9,7 +9,22 @@ By default, it will generate 50 frames, the mode can optionnally be applied in t
 ```bash
 python create_traj.py ground_truth/1MF2H_1OTSC.pdb predictions/1MF2H_1OTSC_mode_0.txt traj_1MF2H_1OTSC_mode_0.pdb
 ```
-## Script 3: compute_RMSD_vs_GTconf.py
+
+## Script 3: sample_from_predictions.py
+
+Generate a trajectory by deforming a starting 3D structure along a set of modes. The amplitudes are uniformly sampled within a hypersphere of total energy whose diameter depends on the size of the protein (number of residues). 
+
+How to call the function:
+
+```python
+results = load_and_sample(
+    pt_path="ground_truth/"+prot+".pt",
+    pred_modes_dir="predictions/"+prot,
+    outPDB="traj_fixed_energy/ensemble_"+prot+".pdb",
+    mulFac=1
+```
+
+## Script 4: compute_RMSD_vs_GTconf.py
 
 Compute metrics to evaluate the quality of generated ensembles.
 These include the RMSD values to known experimental conformations, the coverage (fraction of experimental conformations approximated with deviation smaller than 2.5 Angstroms), the diversity, the precision, and the recall.
